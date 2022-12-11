@@ -1,7 +1,8 @@
-package com.user.main.product.Dao;
+package com.user.main.product.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
 import com.user.main.entity.UserEntity;
 
 @Repository
