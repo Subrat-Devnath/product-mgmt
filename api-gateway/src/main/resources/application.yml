@@ -1,0 +1,31 @@
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: API-GATEWAY
+    
+  cloud:
+    gateway:
+      routes:
+        - id: USER-MGMT
+          uri: lb://USER-MGMT
+          predicates:
+            - Path=/user-mgmt/user/**
+        - id: PRODUCT-MGMT
+          uri: lb://PRODUCT-MGMT
+          predicates:
+            - Path=/product-mgmt/product/**
+
+
+#This is for eureka server       
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostName: localhost
+       
+    
